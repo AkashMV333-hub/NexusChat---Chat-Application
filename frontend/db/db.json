@@ -1,0 +1,76 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "user1",
+      "about": "hey I am using Secure chat!",
+      "img": "./img/user.png"
+    },
+    {
+      "id": "2",
+      "name": "user2",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "3",
+      "name": "user3",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "4",
+      "name": "user1",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "5",
+      "name": "user2",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "6",
+      "name": "user3",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "7",
+      "name": "user1",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "8",
+      "name": "user2",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "9",
+      "name": "user3",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "10",
+      "name": "user1",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "11",
+      "name": "user4",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    },
+    {
+      "id": "12",
+      "name": "user3",
+      "about": "hey I am using Secure chat!",
+      "img": "..../public/logo192.png"
+    }
+  ]
+}

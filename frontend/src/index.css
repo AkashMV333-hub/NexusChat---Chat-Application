@@ -1,0 +1,79 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.single-contact:hover{
+  background-color: lightgray;
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.05);
+}
+
+.single-contact:active{
+  background-color: darkgray;
+  transform: scale(0.95);
+}
+
+.bkgrd-img{
+  background-image: url("../public/bg-1.jpg");
+  background-size: cover;  /* Ensures the image covers the entire area */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents tiling */
+  width: 100%;
+}
+
+.lbg-img{
+  background-image: url("../public/bg-5.webp");
+  background-size: cover;  
+  background-repeat: no-repeat;
+}
+
+.navcontacts{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
+
+.acc-img{
+  background-image: url("../public/bg-6.jpg");
+  background-size: cover;  
+  background-repeat: no-repeat;
+}
+
+
+.bimage{
+  background-image: url("../public/bg-8.jpg");
+  background-size: cover;  /* Ensures the image covers the entire area */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents tiling */
+  width: 100%;
+}
+
+
+#root{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
