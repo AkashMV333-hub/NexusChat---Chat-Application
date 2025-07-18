@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { Value } from "sass";
 
 const UserSchema = new mongoose.Schema({
     userId: {
