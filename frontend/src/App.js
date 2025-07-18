@@ -20,7 +20,7 @@ const App = () => {
   const [connectContacts, setConnectContacts] = useState("");
   const [cochat, setCochat] = useState("");
 
-  const socket = io("https://nexuschat-chat-application-y519.onrender.com", {
+  const socket = io("wss://nexuschat-chat-application-y519.onrender.com", {
     transports: ["websocket", "polling"], // Ensures compatibility
     withCredentials: true // Allows cross-origin cookies
 });
