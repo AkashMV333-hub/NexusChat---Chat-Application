@@ -10,7 +10,7 @@ const Register = () => {
     const navigate = useNavigate("/register");
 
     const handleRegister = async () => {
-      const response = await axios.post("http://localhost:3001/api/auth/register",{
+      const response = await axios.post("https://nexuschat-chat-application-y519.onrender.com/api/auth/register",{
         "userId": userId,
         "id": 1,
         "name": name,

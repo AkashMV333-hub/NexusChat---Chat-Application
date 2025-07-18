@@ -13,7 +13,7 @@ const Chatbox = ({ msg, setMsg, sendMsg, reply, msgarr, cochat, setCochat, setMs
     useEffect(() => {   
         if(id !== ""){
             const getdata = async () => {
-                const response = await axios.get(`http://localhost:3001/api/user/${id}`);
+                const response = await axios.get(`https://nexuschat-chat-application-y519.onrender.com/api/user/${id}`);
                 setChatdata(response.data);
             };
             setCochat("");

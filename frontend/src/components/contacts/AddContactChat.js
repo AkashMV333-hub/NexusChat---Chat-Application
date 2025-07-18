@@ -9,7 +9,7 @@ const AddContactChat = ({ id, userId, setConnectContacts}) => {
 
     const getcontact = async () => {
       try {
-          const response = await axios.get(`http://localhost:3001/api/user/${id}`, {
+          const response = await axios.get(`https://nexuschat-chat-application-y519.onrender.com/api/user/${id}`, {
               withCredentials: true,  // Required to include cookies in requests
           });
   
@@ -31,7 +31,7 @@ const AddContactChat = ({ id, userId, setConnectContacts}) => {
 
     const addcontact = async () => {
       try {
-          const response = await axios.put(`http://localhost:3001/api/user/${id}`, {
+          const response = await axios.put(`https://nexuschat-chat-application-y519.onrender.com/api/user/${id}`, {
               userId: userId,
               contacts: [...gotcontacts, conuserId], // Merge old contacts + new one
           }, { withCredentials: true });

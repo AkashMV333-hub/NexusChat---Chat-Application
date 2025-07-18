@@ -15,7 +15,7 @@ const Contacts = ({ id, connectContacts, setCochat }) => {
         if(id != null || connectContacts !== ""){
             console.log("id changed")
             const getdata = async () => {
-                const response = await axios.get(`http://localhost:3001/api/user/${id}`);
+                const response = await axios.get(`https://nexuschat-chat-application-y519.onrender.com/api/user/${id}`);
                 setSendcontacts(response.data.contacts);
                 console.log(`show contacts ${response.data.contacts}`);
             }
@@ -27,7 +27,7 @@ const Contacts = ({ id, connectContacts, setCochat }) => {
         if(sendcontacts.length > 0){
             const sendfunction = async () => {
                 try {
-                    const response = await axios.post("http://localhost:3001/api/contacts",{
+                    const response = await axios.post("https://nexuschat-chat-application-y519.onrender.com/api/contacts",{
                         "contacts": sendcontacts
                     });
                     setContacts(response.data.contacts);

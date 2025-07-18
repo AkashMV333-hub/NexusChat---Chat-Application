@@ -8,7 +8,7 @@ const Login = ({ setId, handlelogin, userId, setUserId }) => {
 
     const loginfunc = async () => {
       axios.defaults.withCredentials = true;
-      const response = await axios.post("http://localhost:3001/api/auth/login",{
+      const response = await axios.post("https://nexuschat-chat-application-y519.onrender.com/api/auth/login",{
         "userId": userId,
         "password": pwd
       }, { withCredentials: true });
