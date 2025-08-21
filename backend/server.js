@@ -22,7 +22,7 @@ app.use(cors({
 const io = new Server(server, {
     cors: {
         origin: "https://nexus-chat-chat-application-5ym8.vercel.app/",
-        methods: ["GET","POST"],
+        methods: ["GET","POST","PUT","DELETE"],
         credentials: true
     },
 });
