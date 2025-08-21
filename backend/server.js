@@ -15,13 +15,13 @@ const server = http.createServer(app);
 dotenv.config()
 
 app.use(cors({
-    origin: "https://nexus-chat-chat-application-5ym8.vercel.app/",  // Adjust to match frontend URL
+    origin: "https://nexus-chat-chat-application-5ym8.vercel.app",  // Adjust to match frontend URL
     credentials: true,  // Allow credentials (cookies)
 }));
 
 const io = new Server(server, {
     cors: {
-        origin: "https://nexus-chat-chat-application-5ym8.vercel.app/",
+        origin: "https://nexus-chat-chat-application-5ym8.vercel.app",
         methods: ["GET","POST","PUT","DELETE"],
         credentials: true
     },
