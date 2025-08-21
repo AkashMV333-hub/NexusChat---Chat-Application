@@ -14,7 +14,7 @@ const Login = ({ setId, handlelogin, userId, setUserId }) => {
       }, { withCredentials: true });
       console.log(`login ${response.data.details.name}`);
       setId(response.data.details._id);
-      navigate("/");
+      navigate("/addcontactchat");
     }
 
   return (
