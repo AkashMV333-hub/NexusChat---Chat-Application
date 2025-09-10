@@ -13,6 +13,7 @@ const Login = ({ setId, handlelogin, userId, setUserId }) => {
         "password": pwd
       }, { withCredentials: true });
       console.log(`login ${response.data.details.name}`);
+      console.log(`id ${response.data.details.id}`);
       setId(response.data.details._id);
       navigate("/addcontactchat");
     }
