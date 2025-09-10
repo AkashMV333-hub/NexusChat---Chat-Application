@@ -9,6 +9,7 @@ const AddContactChat = ({ id, userId, setConnectContacts}) => {
 
     const getcontact = async () => {
       try {
+          console.log(`id inside AddContact.js ${id}`);
           const response = await axios.get(`https://nexuschat-chat-application-y519.onrender.com/api/user/${id}`, {
               withCredentials: true,  // Required to include cookies in requests
           });
