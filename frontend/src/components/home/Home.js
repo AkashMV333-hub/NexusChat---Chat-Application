@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-     <div className='d-flex flex-column' style={{height: "calc(100vh-76px)", width: "calc(100vw-330px)"}}>
-      <div className='container overflow-auto p-0' style={{width: "calc(100vw-336px)"}}>
+     <div className="d-flex flex-column w-100" style={{ height: "calc(100vh - 76px)" }}>
+       <div className="container-fluid overflow-auto p-0">
         <div className='d-flex flex-column justify-content-center align-items-center bimage p-0' style={{height: "630px", width: "calc(100vw-340px)"}}>
           <div className='d-fex bg-white ps-5 pe-5 pb-5 pt-4' style={{width: "600px", height: "370px", borderRadius: "20px", marginLeft: "-80px"}}>
             <h1 style={{marginLeft: "150px", marginRight: "150px", marginBottom: "10px"}}>NexusChat</h1>
@@ -18,7 +18,7 @@ const Home = () => {
             <p className='fs-5'>No delays, no waiting—just instant message delivery with real-time WebSockets technology. Your chats feel as natural as speaking face-to-face.Experience faster, safer, and more engaging conversations with NexusChat</p>
           </div>
         </div>
-        <div className='d-flex' style={{height: "670px"}}>
+        <div className='d-flex' style={{height: "670px", paddingLeft: "150px", width: "calc{100vw-330px})"}}>
           <div className='d-flex flex-column justify-content-center ps-4 pe-3' style={{width: "700px"}}>
             <div className='p-5'>
               <h3>Instant & Effortless Communication</h3>
@@ -31,7 +31,7 @@ const Home = () => {
             <img src="screenshot.png" alt="Screenshot" style={{width: "680px",objectFit: "cover"}}/>
           </div>
         </div>
-        <div className='d-flex' style={{height: "750px", width: "calc{100vw-330px})"}}>
+        <div className='d-flex' style={{height: "750px", paddingLeft: "150px", width: "calc{100vw-330px})"}}>
         <div className='d-flex flex-column justify-content-center' style={{width: "700px"}}>
             <div className='d-inline' style={{paddingRight: "120px", padding: "60px"}}>
               <h3>No ads. No trackers. No kidding</h3>
@@ -42,7 +42,7 @@ const Home = () => {
             <img src="Noads.png" alt="Noads" style={{width: "580px", objectFit: "cover", borderRadius: "20px"}}/>
           </div>
         </div>
-        <div className='d-flex' style={{height: "750px", width: "calc{100vw-330px})"}}>
+        <div className='d-flex' style={{height: "750px", paddingLeft: "150px", width: "calc{100vw-330px})"}}>
         <div className='d-flex flex-column justify-content-center' style={{width: "700px"}}>
             <div className='d-inline' style={{paddingRight: "120px", padding: "60px"}}>
               <h3>Free for Everyone</h3>
