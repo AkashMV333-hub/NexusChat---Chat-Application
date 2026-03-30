@@ -8,7 +8,7 @@ const Home = () => {
         <div className='d-flex flex-column justify-content-center align-items-center bimage p-0' style={{height: "630px", width: "calc(100vw-340px)"}}>
           <div className='d-fex bg-white ps-5 pe-5 pb-5 pt-4' style={{width: "600px", height: "370px", borderRadius: "20px", marginLeft: "-80px"}}>
             <h1 style={{marginLeft: "150px", marginRight: "150px", marginBottom: "10px"}}>NexusChat</h1>
-            <p className='fs-5'>In a world where communication matters, [Your Chat App Name] brings you real-time messaging with speed, security, and simplicity at its core. Whether you're chatting with friends, collaborating with a team, or staying in touch with family, our platform ensures smooth, encrypted, and uninterrupted conversations.</p>
+            <p className='fs-5'>In a world where communication matters, NexusChat brings you real-time messaging with speed, security, and simplicity at its core. Whether you're chatting with friends, collaborating with a team, or staying in touch with family, our platform ensures smooth, encrypted, and uninterrupted conversations.</p>
             <button className='btn btn-primary btn-lg mt-2'><Link to='/register' style={{textDecoration: "none"}} className='text-white'>Get Started</Link></button>
           </div>
         </div>
