@@ -15,16 +15,18 @@ const server = http.createServer(app);
 dotenv.config()
 
 app.use(cors({
-    origin: "https://nexus-chat-chat-application-5ym8.vercel.app",  // Adjust to match frontend URL
+    origin: "http://localhost:3000",  // https://nexus-chat-chat-application-5ym8.vercel.app
     credentials: true,  // Allow credentials (cookies)
 }));
 
 const io = new Server(server, {
     cors: {
-        origin: "https://nexus-chat-chat-application-5ym8.vercel.app",
+        origin: "http://localhost:3000", // https://nexus-chat-chat-application-5ym8.vercel.app
         methods: ["GET","POST","PUT","DELETE"],
         credentials: true
     },
+    pingInterval: 25000,
+    pingTimeout: 60000,
 });
 
 app.use(express.static("public"));
@@ -61,6 +63,10 @@ io.on("connection", (socket) => {
         console.log(`receiver id ${resocId}`);
         io.to(resocId).emit("chatstarted", msg);
         console.log("io emitted event of broadcasting msg to all");
+    });
+
+    socket.on("heartbeat", () => {
+        socket.emit("heartbeat");
     });
 
     socket.on("disconnect", () => {
