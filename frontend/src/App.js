@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/navbar/Navbar.js'
 import Contacts from './components/contacts/Contacts.js'
 import { Routes, Route } from 'react-router-dom';
@@ -25,21 +25,10 @@ const App = () => {
   const hideContactsRoutes = ["/", "/login", "/register"];
   const shouldHideContacts = hideContactsRoutes.includes(location.pathname);
 
-   const socket = io("wss://nexuschat-chat-application-y519.onrender.com", {
+  const socket = io("wss://nexuschat-chat-application-y519.onrender.com", {
     transports: ["websocket", "polling"], // Ensures compatibility
-    withCredentials: true,
-    reconnection: true,
-    reconnectionDelay: 1000,
-    reconnectionDelayMax: 5000,
-    reconnectionAttempts: 5
-  });
-
-  useEffect(() => {
-    const heartbeatInterval = setInterval(() => {
-      socket.emit("heartbeat");
-    }, 20000);
-    return () => clearInterval(heartbeatInterval);
-  }, [socket]);
+    withCredentials: true // Allows cross-origin cookies
+});
 
   const handlelogin = (userId) => {
     socket.emit("login", userId);
