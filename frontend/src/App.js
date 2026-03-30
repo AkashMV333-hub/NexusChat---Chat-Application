@@ -25,7 +25,7 @@ const App = () => {
   const hideContactsRoutes = ["/", "/login", "/register"];
   const shouldHideContacts = hideContactsRoutes.includes(location.pathname);
 
-  const socket = io("http://localhost:3001", { // wss://nexuschat-chat-application-y519.onrender.com
+   const socket = io("wss://nexuschat-chat-application-y519.onrender.com", {
     transports: ["websocket", "polling"], // Ensures compatibility
     withCredentials: true,
     reconnection: true,
