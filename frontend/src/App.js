@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './components/navbar/Navbar.js'
 import Contacts from './components/contacts/Contacts.js'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import "./index.css";
 import Chatbox from './components/chatbox/Chatbox.js';
 import io from 'socket.io-client'
@@ -9,6 +9,7 @@ import Login from './components/login/Login.js';
 import Home from './components/home/Home.js';
 import Register from './components/register/Register.js';
 import AddContactChat from './components/contacts/AddContactChat.js';
+import { useLocation } from "react-router-dom";
 
 
 const App = () => {
@@ -20,7 +21,11 @@ const App = () => {
   const [connectContacts, setConnectContacts] = useState("");
   const [cochat, setCochat] = useState("");
 
-  const socket = io("wss://nexuschat-chat-application-y519.onrender.com", {
+  const location = useLocation();
+  const hideContactsRoutes = ["/", "/login", "/register"];
+  const shouldHideContacts = hideContactsRoutes.includes(location.pathname);
+
+  const socket = io("http://localhost:3001", { // wss://nexuschat-chat-application-y519.onrender.com
     transports: ["websocket", "polling"], // Ensures compatibility
     withCredentials: true // Allows cross-origin cookies
 });
@@ -50,30 +55,35 @@ const App = () => {
   })
 
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <div className='d-flex overflow-hidden ' style={{paddingBottom: "0px", height: "calc(100vh - 70px)"}}>
-      <Contacts id={id} userId={userId} connectContacts={connectContacts} setCochat={setCochat}/>
+  <>
+    <Navbar />
+    <div className='d-flex overflow-hidden' style={{ height: "calc(100vh - 70px)" }}>
+
+      {!shouldHideContacts && (
+        <Contacts
+          id={id}
+          userId={userId}
+          connectContacts={connectContacts}
+          setCochat={setCochat}
+        />
+      )}
+
       <Routes>
-        <Route path="/" element={
-          <Home />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={
+          <Login setId={setId} handlelogin={handlelogin} userId={userId} setUserId={setUserId} />
         }/>
-        <Route path='/login' element={
-          <Login setId={setId} handlelogin={handlelogin} userId={userId} setUserId={setUserId}/>
-          }/>
-        <Route path='/chatbox/:id' element={
+        <Route path="/chatbox/:id" element={
           <Chatbox msg={msg} setMsg={setMsg} sendMsg={sendMsg} reply={reply} msgarr={msgarr} cochat={cochat} setCochat={setCochat} setMsgarr={setMsgarr}/>
-          }/>
-        <Route path='/register' element={
-           <Register />
-          }/>
-        <Route path='/addcontactchat' element={
-           <AddContactChat id={id} setConnectContacts={setConnectContacts}/>
-          }/>  
+        }/>
+        <Route path="/register" element={<Register />} />
+        <Route path="/addcontactchat" element={
+          <AddContactChat id={id} setConnectContacts={setConnectContacts}/>
+        }/>
       </Routes>
-      </div>
-    </BrowserRouter>
-  )
+    </div>
+  </>
+);
 }
 
 export default App
